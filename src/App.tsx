@@ -1,5 +1,4 @@
 import './App.scss';
-import ExpenseItem from './components/ExpenseItem';
 import ExpenseList from './components/ExpenseList';
 import { Expense } from './models/expense';
 

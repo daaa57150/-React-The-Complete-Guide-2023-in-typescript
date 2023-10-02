@@ -1,6 +1,7 @@
 import { Expense } from "../models/expense";
+import Card from "./Card";
 import ExpenseItem from "./ExpenseItem";
-
+import "./ExpenseList.scss";
 
 
 interface ExpenseListProps{
@@ -9,8 +10,8 @@ interface ExpenseListProps{
 
 export default function ExpenseList({ expenses }: ExpenseListProps) {
   return (
-    <div className="expenses">
-      {expenses.map(expense => <ExpenseItem expense={expense} />)}
-    </div>
+    <Card className="expenses">
+      { expenses.map(expense => <ExpenseItem expense={expense} />) }
+    </Card>
   );
 }
