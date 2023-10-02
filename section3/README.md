@@ -1,3 +1,8 @@
+# Beware
+Create React App isn't supported anymore ?
+https://dev.to/ag2byte/create-react-app-is-officially-dead-h7o
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

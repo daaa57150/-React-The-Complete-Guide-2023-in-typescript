@@ -1,6 +1,8 @@
-import { Expense } from "../models/expense";
-import Card from "./Card";
-import ExpenseItem from "./ExpenseItem";
+
+import { Expense } from "@models/expense";
+import Card from "@components/ui/Card";
+import ExpenseItem from "@components/expenses/ExpenseItem";
+
 import "./ExpenseList.scss";
 
 

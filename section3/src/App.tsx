@@ -1,6 +1,7 @@
+import { Expense } from '@models/expense';
+import ExpenseList from '@components/expenses/ExpenseList';
+
 import './App.scss';
-import ExpenseList from './components/ExpenseList';
-import { Expense } from './models/expense';
 
 function App() {
 

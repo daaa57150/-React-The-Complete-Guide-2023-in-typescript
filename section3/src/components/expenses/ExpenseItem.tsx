@@ -1,6 +1,8 @@
-import { Expense } from '../models/expense';
-import Card from './Card';
-import ExpenseDate from './ExpenseDate';
+
+import { Expense } from '@models/expense';
+import Card from '@components/ui/Card';
+import ExpenseDate from '@components/expenses/ExpenseDate';
+
 import './ExpenseItem.scss';
 
 interface ExpenseItemProps {
