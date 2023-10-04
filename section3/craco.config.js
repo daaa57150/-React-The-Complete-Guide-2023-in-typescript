@@ -4,6 +4,7 @@ module.exports = {
     alias: {
       '@components': path.resolve(__dirname, 'src', 'components'),
       '@models': path.resolve(__dirname, 'src', 'models'),
+      '@shared': path.resolve(__dirname, 'src', 'shared'),
     },
   },
 };

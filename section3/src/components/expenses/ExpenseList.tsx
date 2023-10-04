@@ -1,7 +1,7 @@
 
-import { Expense } from "@models/expense";
-import Card from "@components/ui/Card";
 import ExpenseItem from "@components/expenses/ExpenseItem";
+import Card from "@components/ui/Card";
+import { Expense } from "@models/expense";
 
 import "./ExpenseList.scss";
 
@@ -13,7 +13,7 @@ interface ExpenseListProps{
 export default function ExpenseList({ expenses }: ExpenseListProps) {
   return (
     <Card className="expenses">
-      { expenses.map(expense => <ExpenseItem expense={expense} key={expense.id} />) }
+      { expenses.map(expense => <ExpenseItem expense={ expense } key={ expense.id } />) }
     </Card>
   );
 }

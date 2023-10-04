@@ -1,0 +1,12 @@
+{
+  "[typescript]": {
+      "editor.detectIndentation": false,
+      "editor.tabSize": 2
+  },
+  "files.trimTrailingWhitespace": true,
+  "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single"
+}
