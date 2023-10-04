@@ -2,6 +2,7 @@ import { Expense } from '@models/expense';
 import ExpenseList from '@components/expenses/ExpenseList';
 
 import './App.scss';
+import NewExpense from '@components/new-expense/NewExpense';
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <p>{ _.lowerCase('TEST') }</p> */}
+        <NewExpense />
         <ExpenseList expenses={expenses} />
       </header>
     </div>

@@ -1,0 +1,66 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+
+    {
+			"type": "npm",
+			"script": "start",
+			"path": "section3",
+			"label": "npm: start - section3",
+			"detail": "cross-env BROWSER=none craco start",
+
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "No issues found."
+          }
+        }
+      }
+		},
+
+		{
+			"type": "npm",
+			"script": "launch",
+			"path": "section3",
+			"label": "npm: launch - section3",
+			"detail": "craco start",
+
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "No issues found."
+          }
+        }
+      }
+		},
+
+    {
+      "label": "Terminate All Tasks",
+      "command": "echo ${input:terminate}",
+      "type": "shell",
+      "problemMatcher": []
+    }
+	],
+  "inputs": [
+    {
+      "id": "terminate",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "terminateAll"
+    }
+  ]
+}

@@ -30,10 +30,10 @@ const concepts: Concept[] = [
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <ConceptList concepts={concepts} />
-    </div>
+    </>
   );
 }
 

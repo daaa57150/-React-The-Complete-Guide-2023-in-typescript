@@ -1,0 +1,17 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Section3",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start - section3",
+        "postDebugTask": "Terminate All Tasks",
+        "url": "http://localhost:3000",
+        "webRoot": "${workspaceRoot}/section3/src",
+      }
+    ]
+}

@@ -33,7 +33,9 @@
     "start": "cross-env BROWSER=none craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+
+    "launch": "craco start"
   },
   "eslintConfig": {
     "extends": [

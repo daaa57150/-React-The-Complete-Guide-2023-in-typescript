@@ -9,7 +9,7 @@ interface ExpenseItemProps {
   expense: Expense;
 }
 
-function ExpenseItem({ expense }: ExpenseItemProps) {
+export default function ExpenseItem({ expense }: ExpenseItemProps) {
 
   return (
     <Card className="expense-item">
@@ -22,4 +22,3 @@ function ExpenseItem({ expense }: ExpenseItemProps) {
   );
 }
 
-export default ExpenseItem;

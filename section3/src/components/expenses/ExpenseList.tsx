@@ -13,7 +13,7 @@ interface ExpenseListProps{
 export default function ExpenseList({ expenses }: ExpenseListProps) {
   return (
     <Card className="expenses">
-      { expenses.map(expense => <ExpenseItem expense={expense} />) }
+      { expenses.map(expense => <ExpenseItem expense={expense} key={expense.id} />) }
     </Card>
   );
 }
