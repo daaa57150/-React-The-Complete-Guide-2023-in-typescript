@@ -1,7 +1,6 @@
 import ExpenseList from '@components/expenses/ExpenseList';
 import { Expense } from '@models/expense';
 
-import ExpenseFilter from '@components/expenses/ExpenseFilter';
 import NewExpense from '@components/new-expense/NewExpense';
 import _ from 'lodash';
 import { useState } from 'react';
@@ -32,31 +31,20 @@ const startingExpenses : Expense[] = [
 function App() {
 
   const [expenses, setExpenses] = useState(startingExpenses);
-  const [yearFilter, setYearFilter] = useState<number>();
 
   const addExpense = (expense: Expense) => {
     if(_.isNil(expense.id)) {
       expense.id = Math.random().toString();
     }
-    setExpenses([...expenses, expense]);
+    setExpenses((previousExpenses) => [expense, ...previousExpenses]);
   }
 
-  const filterByYear = (year?: number) => {
-    console.log(`We should filter with year: ${year}`);
-    setYearFilter(year);
-  }
-
-  const matchesYearFilter = (date: Date) => _.isNil(yearFilter) ? true : date.getFullYear() === yearFilter;
-  const filteredExpenses = () => {
-    return expenses.filter(expense => matchesYearFilter(expense.date));
-  }
 
   return (
     <div className="App">
       <header className="App-header">
         <NewExpense onNewExpense={ addExpense }/>
-        <ExpenseFilter onYearSelect={ filterByYear }/>
-        <ExpenseList expenses={ filteredExpenses() } />
+        <ExpenseList expenses={ expenses } />
       </header>
     </div>
   );
