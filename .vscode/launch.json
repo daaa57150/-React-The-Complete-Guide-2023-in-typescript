@@ -12,6 +12,16 @@
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:3000",
         "webRoot": "${workspaceRoot}/section3/src",
+      },
+
+      {
+        "name": "Section7",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start - section7",
+        "postDebugTask": "Terminate All Tasks",
+        "url": "http://localhost:3000",
+        "webRoot": "${workspaceRoot}/section7/src",
       }
     ]
 }

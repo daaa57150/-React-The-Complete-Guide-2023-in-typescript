@@ -49,6 +49,29 @@
 		},
 
     {
+			"type": "npm",
+			"script": "start",
+			"path": "section7",
+			"label": "npm: start - section7",
+			"detail": "cross-env BROWSER=none craco start",
+
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "No issues found."
+          }
+        }
+      }
+		},
+
+    {
       "label": "Terminate All Tasks",
       "command": "echo ${input:terminate}",
       "type": "shell",
