@@ -6,6 +6,7 @@ import _ from 'lodash';
 import { useState } from 'react';
 import ExpenseFilter from './ExpenseFilter';
 import "./Expenses.scss";
+import ExpensesChart from './ExpensesChart';
 import ExpensesList from './ExpensesList';
 
 
@@ -23,6 +24,7 @@ export default function ExpenseList({ expenses }: Props) {
   return (
     <Card className="expenses">
       <ExpenseFilter onYearSelect={ setYearFilter } defaultYear={ yearFilter } />
+      <ExpensesChart expenses={ filteredExpenses } />
       <ExpensesList expenses={ filteredExpenses } />
     </Card>
   );
