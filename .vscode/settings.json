@@ -8,5 +8,6 @@
       "source.organizeImports": true,
   },
   "javascript.preferences.quoteStyle": "single",
-  "typescript.preferences.quoteStyle": "single"
+  "typescript.tsdk": "section7/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
