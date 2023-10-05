@@ -1,4 +1,4 @@
-import ExpenseList from '@components/expenses/ExpenseList';
+import Expenses from '@components/expenses/Expenses';
 import { Expense } from '@models/expense';
 
 import NewExpense from '@components/new-expense/NewExpense';
@@ -44,7 +44,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NewExpense onNewExpense={ addExpense }/>
-        <ExpenseList expenses={ expenses } />
+        <Expenses expenses={ expenses } />
       </header>
     </div>
   );

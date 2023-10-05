@@ -1,12 +1,12 @@
 import _ from 'lodash';
 import './ExpenseFilter.css';
 
-interface ExpenseFilterProps {
+interface Props {
   defaultYear?: number;
   onYearSelect?: (year?: number) => void;
 }
 
-export default function ExpenseFilter({ defaultYear, onYearSelect }: ExpenseFilterProps) {
+export default function ExpenseFilter({ defaultYear, onYearSelect }: Props) {
   const years = [2022, 2021, 2020, 2019];
   const selectYear = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const year = _.isEmpty(event.target.value) ? undefined : _.toNumber(event.target.value);

@@ -1,10 +1,10 @@
 import './ExpenseDate.scss';
 
-interface ExpenseDateProps {
+interface Props {
   date: Date
 }
 
-export default function ExpenseDate({ date }: ExpenseDateProps) {
+export default function ExpenseDate({ date }: Props) {
 
   const month = date.toLocaleDateString('fr', { month: 'long' });
   const day = date.toLocaleDateString('fr', { day: '2-digit' });

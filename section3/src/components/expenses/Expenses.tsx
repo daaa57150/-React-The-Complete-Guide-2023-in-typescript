@@ -1,19 +1,19 @@
 
-import ExpenseItem from "@components/expenses/ExpenseItem";
 import Card from "@components/ui/Card";
 import { Expense } from "@models/expense";
 
 import _ from 'lodash';
 import { useState } from 'react';
 import ExpenseFilter from './ExpenseFilter';
-import "./ExpenseList.scss";
+import "./Expenses.scss";
+import ExpensesList from './ExpensesList';
 
 
-interface ExpenseListProps{
+interface Props{
   expenses: Expense[]
 }
 
-export default function ExpenseList({ expenses }: ExpenseListProps) {
+export default function ExpenseList({ expenses }: Props) {
 
   const [yearFilter, setYearFilter] = useState<number|undefined>(undefined);
 
@@ -23,7 +23,7 @@ export default function ExpenseList({ expenses }: ExpenseListProps) {
   return (
     <Card className="expenses">
       <ExpenseFilter onYearSelect={ setYearFilter } defaultYear={ yearFilter } />
-      { filteredExpenses.map(expense => <ExpenseItem expense={ expense } key={ expense.id } />) }
+      <ExpensesList expenses={ filteredExpenses } />
     </Card>
   );
 }

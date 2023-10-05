@@ -5,14 +5,15 @@ import _ from 'lodash';
 import { useState } from 'react';
 import './ExpenseForm.css';
 
-interface ExpenseFormProps {
-  onValidSubmit: (expense: Expense) => void
+interface Props {
+  onValidSubmit: (expense: Expense) => void;
+  onCancel: () => void;
 }
 
 // TODO: maybe just use strings, not dates or numbers
 type ExpenseData = Partial<Expense>; //
 
-export default function ExpenseForm({ onValidSubmit }: ExpenseFormProps) {
+export default function ExpenseForm({ onValidSubmit, onCancel }: Props) {
   const [expense, setExpense] = useState<ExpenseData>();
 
   function mergeNewExpense(changes: ExpenseData): void {
@@ -73,6 +74,7 @@ export default function ExpenseForm({ onValidSubmit }: ExpenseFormProps) {
         </div>
 
         <div className="new-expense__actions">
+          <button type='reset' onClick={ onCancel }>Cancel</button>
           <button type='submit'>Add it</button>
         </div>
       </div>

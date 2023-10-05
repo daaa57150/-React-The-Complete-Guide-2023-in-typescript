@@ -1,15 +1,15 @@
 
-import { Expense } from '@models/expense';
-import Card from '@components/ui/Card';
 import ExpenseDate from '@components/expenses/ExpenseDate';
+import Card from '@components/ui/Card';
+import { Expense } from '@models/expense';
 
 import './ExpenseItem.scss';
 
-interface ExpenseItemProps {
+interface Props {
   expense: Expense;
 }
 
-export default function ExpenseItem({ expense }: ExpenseItemProps) {
+export default function ExpenseItem({ expense }: Props) {
 
   return (
     <Card className="expense-item">
