@@ -25,7 +25,11 @@
 
   &.invalid {
     label {
-      color: 'red';
+      color: red;
+    }
+
+    input {
+      background: #fb6161;
     }
   }
 }
