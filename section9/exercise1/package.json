@@ -21,7 +21,7 @@
     "sass": "^1.68.0",
     "styled-components": "^6.0.8",
     "ts-pattern": "^5.0.5",
-    "typescript": "^5.2.0",
+    "typescript": "^5.2.2",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
   "overrides": {
     "@typescript-eslint/typescript-estree": "^5.57.1",
     "fork-ts-checker-webpack-plugin": "^6.5.3",
-    "typescript": "^5.2.0"
+    "typescript": "^5.2.2"
   },
   "scripts": {
     "start0": "cross-env BROWSER=none react-scripts start",
