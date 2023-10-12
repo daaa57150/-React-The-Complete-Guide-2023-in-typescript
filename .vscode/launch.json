@@ -22,6 +22,18 @@
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:3000",
         "webRoot": "${workspaceRoot}/section7/src",
+      },
+
+      {
+        "name": "Section9 - Calculator",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start - section9 Calculator", // needs to be in the tasks.json file
+        "postDebugTask": "Terminate All Tasks",
+        "url": "http://localhost:3000",
+        "webRoot": "${workspaceRoot}/section9/exercise1/src",
       }
+
+
     ]
 }
