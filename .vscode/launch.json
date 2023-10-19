@@ -32,6 +32,16 @@
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:3000",
         "webRoot": "${workspaceRoot}/section9/exercise1/src",
+      },
+
+      {
+        "name": "Section11 - Login",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start - section11 Login", // needs to be in the tasks.json file
+        "postDebugTask": "Terminate All Tasks",
+        "url": "http://localhost:3000",
+        "webRoot": "${workspaceRoot}/section11/src",
       }
 
 
