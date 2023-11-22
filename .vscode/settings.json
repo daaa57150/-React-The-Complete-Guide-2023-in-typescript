@@ -9,5 +9,11 @@
   },
   "javascript.preferences.quoteStyle": "single",
   "typescript.tsdk": "section7/node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  // see https://www.codeconcisely.com/posts/tailwind-css-unknown-at-rules/
+  // "css.customData": ["./.vscode/css-data.json"]
+  // I opted for the plugin: https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }
