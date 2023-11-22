@@ -18,7 +18,7 @@ export default function Chart({ contents }: Props) {
 
   return (
     <div className="chart">
-      { contents.map(content => <ChartBar { ...content } maxValue={ maxValue }  />) }
+      { contents.map(content => <ChartBar { ...content } maxValue={ maxValue } key={ content.label } />) }
     </div>
   );
 }

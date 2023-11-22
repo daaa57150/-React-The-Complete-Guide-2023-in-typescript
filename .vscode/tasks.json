@@ -5,8 +5,8 @@
     {
 			"type": "npm",
 			"script": "start",
-			"path": "section3",
-			"label": "npm: start - section3",
+			"path": "legacy/section3",
+			"label": "legacy npm: start - section3",
 			"detail": "cross-env BROWSER=none craco start",
 
       "isBackground": true,
@@ -28,8 +28,8 @@
 		{
 			"type": "npm",
 			"script": "launch",
-			"path": "section3",
-			"label": "npm: launch - section3",
+			"path": "legacy/section3",
+			"label": "legacy npm: launch - section3",
 			"detail": "craco start",
 
       "isBackground": true,
@@ -51,8 +51,8 @@
     {
 			"type": "npm",
 			"script": "start",
-			"path": "section7",
-			"label": "npm: start - section7",
+			"path": "legacy/section7",
+			"label": "legacy npm: start - section7",
 			"detail": "cross-env BROWSER=none craco start",
 
       "isBackground": true,
@@ -74,8 +74,8 @@
     {
 			"type": "npm",
 			"script": "start",
-			"path": "section9/exercise1",
-			"label": "npm: start - section9 Calculator",
+			"path": "legacy/section9/exercise1",
+			"label": "legacy npm: start - section9 Calculator",
 			"detail": "cross-env BROWSER=none craco start",
 
       "isBackground": true,
@@ -97,8 +97,8 @@
     {
 			"type": "npm",
 			"script": "start",
-			"path": "section11",
-			"label": "npm: start - section11 Login",
+			"path": "legacy/section11",
+			"label": "legacy npm: start - section11 Login",
 			"detail": "cross-env BROWSER=none craco start",
 
       "isBackground": true,
@@ -112,6 +112,33 @@
           },
           "endsPattern": {
             "regexp": "No issues found."
+          }
+        }
+      }
+		},
+
+    // -
+
+
+    {
+			"type": "npm",
+			"script": "start",
+			"path": "section9",
+			"label": "npm: start - section9",
+			// "detail": "cross-env BROWSER=none craco start",
+      "detail": "npm run start",
+
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "VITE v[\\d.]+  ready in .*"
           }
         }
       }

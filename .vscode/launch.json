@@ -4,45 +4,62 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+      // ------------------------------------ //
+      //               LEGACY                 //
+      // ------------------------------------ //
       {
-        "name": "Section3",
+        "name": "(L) S3 - Expense chart",
         "type": "chrome",
         "request": "launch",
-        "preLaunchTask": "npm: start - section3", // needs to be in the tasks.json file
+        "preLaunchTask": "legacy npm: start - section3", // needs to be in the tasks.json file
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:3000",
-        "webRoot": "${workspaceRoot}/section3/src",
+        "webRoot": "${workspaceRoot}/legacy/section3/src",
       },
 
       {
-        "name": "Section7",
+        "name": "(L) S7 - Course goals",
         "type": "chrome",
         "request": "launch",
-        "preLaunchTask": "npm: start - section7", // needs to be in the tasks.json file
+        "preLaunchTask": "legacy npm: start - section7", // needs to be in the tasks.json file
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:3000",
-        "webRoot": "${workspaceRoot}/section7/src",
+        "webRoot": "${workspaceRoot}/legacy/section7/src",
       },
 
       {
-        "name": "Section9 - Calculator",
+        "name": "(L) S9 - Calculator",
         "type": "chrome",
         "request": "launch",
-        "preLaunchTask": "npm: start - section9 Calculator", // needs to be in the tasks.json file
+        "preLaunchTask": "legacy npm: start - section9 Calculator", // needs to be in the tasks.json file
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:3000",
-        "webRoot": "${workspaceRoot}/section9/exercise1/src",
+        "webRoot": "${workspaceRoot}/legacy/section9/exercise1/src",
       },
 
       {
-        "name": "Section11 - Login",
+        "name": "(L) S11 - Login",
         "type": "chrome",
         "request": "launch",
-        "preLaunchTask": "npm: start - section11 Login", // needs to be in the tasks.json file
+        "preLaunchTask": "legacy npm: start - section11 Login", // needs to be in the tasks.json file
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:3000",
-        "webRoot": "${workspaceRoot}/section11/src",
+        "webRoot": "${workspaceRoot}/legacy/section11/src",
+      },
+
+      // ------------------------------------ //
+      //               MODERN                 //
+      // ------------------------------------ //
+      {
+        "name": "S9 - Project management",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start - section9", // needs to be in the tasks.json file
+        "postDebugTask": "Terminate All Tasks",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceRoot}/section9/src",
       }
+
 
 
     ]
