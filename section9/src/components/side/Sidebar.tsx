@@ -1,3 +1,4 @@
+import CreateButton from "@components/ui/CreateButton";
 import { Project } from "@models/models";
 import ProjectList from "./ProjectList";
 
@@ -12,12 +13,14 @@ export default function Sidebar({ projects, selectedProject, onCreateProject, on
 
 
   return <>
-    <aside id="default-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-      <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-        <h1>Your projects</h1>
-        <button type="button" onClick={ onCreateProject }>+ Add project</button>
+    <aside id="default-sidebar" className="w-1/3 px-8 py-16 bg-stone-900 text-stone-300 md:w-72 rounded-r-xl" aria-label="Sidebar">
+        <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">Your projects</h2>
+        <div>
+          <CreateButton onClick={ onCreateProject }>
+            + Add project
+          </CreateButton>
+        </div>
         <ProjectList projects={ projects } onSelectProject={ onSelectProject } selectedProject={ selectedProject }/>
-      </div>
     </aside>
   </>;
 }

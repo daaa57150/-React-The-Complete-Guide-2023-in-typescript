@@ -3,14 +3,14 @@
 import { ButtonClickEvent } from "@shared/types/common.types";
 import { PropsWithChildren } from "react";
 
-interface Props {
+export interface ButtonProps {
   type?: "submit" | "reset" | "button",
   className?: string,
   disabled?: boolean
   onClick?: (event: ButtonClickEvent) => void;
 }
 
-const Button = (props: PropsWithChildren<Props>) => {
+const Button = (props: PropsWithChildren<ButtonProps>) => {
   return (
     <button
       type={ props.type || 'button' }
