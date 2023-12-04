@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { DetailedHTMLProps, InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
+import { DetailedHTMLProps, InputHTMLAttributes, TextareaHTMLAttributes, forwardRef } from 'react';
 
 interface Props {
   asTextarea?: boolean;
@@ -14,17 +14,16 @@ type InputAttributes = InputProps & { asTextarea?: false };
 type ElementAttributes = TextareaAttributes | InputAttributes;
 
 
-export default function Input(props: Props & ElementAttributes) {
+const Input = forwardRef<HTMLInputElement & HTMLTextAreaElement, Props & ElementAttributes>((props, ref) => {
   const className = "w-full p-1 border-b-2 rounded-sm border-stone-300 bg-stone-200 text-stone-600 focus:outline-none focus:border-stone-600";
-
   const input = () => {
     if(props.asTextarea) {
       const attrs = _.omit(props, ['label', 'asTextarea']); // solution 1
-      return <textarea className={ className } { ...attrs  } />;
+      return <textarea ref={ ref } className={ className } { ...attrs  } />;
     }
 
     const { label, asTextarea, ...elemenAttributes } = props; // solution 2
-    return <input className={ className } { ...elemenAttributes } />
+    return <input ref={ ref } className={ className } { ...elemenAttributes } />
   }
 
   return (
@@ -33,4 +32,6 @@ export default function Input(props: Props & ElementAttributes) {
       { input() }
     </p>
   );
-}
+});
+
+export default Input;

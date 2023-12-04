@@ -1,5 +1,5 @@
 import noProjectImage from "@assets/no-projects.png";
-import CreateButton from "@components/ui/CreateButton";
+import PrimaryButton from "@components/ui/PrimaryButton";
 
 interface Props {
   onCreateProject: () => void;
@@ -16,7 +16,7 @@ export default function NoProjectSelected({ onCreateProject }: Props) {
         Select a project or create one.
       </p>
       <p className="mt-8">
-        <CreateButton onClick={ onCreateProject }>Create new project</CreateButton>
+        <PrimaryButton onClick={ onCreateProject }>Create new project</PrimaryButton>
       </p>
     </div>
   );

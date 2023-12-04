@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default function TaskList({ tasks, onAddTask, onRemoveTask }: Props) {
-  if(_.isEmpty(tasks)) return;
 
   const input = createRef<HTMLInputElement>();
 
@@ -22,19 +21,29 @@ export default function TaskList({ tasks, onAddTask, onRemoveTask }: Props) {
     }
   };
 
+  const renderList = () => {
+    if(_.isEmpty(tasks)) return null;
+    return (
+      <div>
+        <ul>
+          { tasks.map(task =>
+            <li key={ task.id }>
+              { task.title }
+              <Button onClick={ () => onRemoveTask(task) }>Remove</Button>
+            </li>
+          )}
+        </ul>
+      </div>
+    );
+  };
+
   return (
     <>
       <div>
         <input type="text" ref={ input }/>
         <Button type="button" onClick={ addTask }>Add Task</Button>
       </div>
-      <div>
-        <ul>
-          { tasks.map(task =>
-            <li key={ task.id }> { task.title } <Button onClick={ () => onRemoveTask(task) }>Remove</Button></li>
-          )}
-        </ul>
-      </div>
+      { renderList() }
     </>
   );
 }

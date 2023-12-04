@@ -12,12 +12,15 @@ export default function ProjectList({ projects, selectedProject, onSelectProject
   if(_.isEmpty(projects)) return;
 
   return <>
-    <ul>
+    <ul className="mt-8">
       { projects.map(project =>
         <li key={ project.id }>
-          <a onClick={ () => onSelectProject(project) } style={ selectedProject === project ? { fontWeight: 'bold'} : {} }>
+          <button
+            className="w-full text-left px-2 py-1 rounded-sm my-1 text-stone-400 hover:text-stone-200 hover:bg-stone-800"
+            onClick={ () => onSelectProject(project) } style={ selectedProject === project ? { fontWeight: 'bold'} : {} }
+          >
             { project.title }
-          </a>
+          </button>
         </li>
       )}
     </ul>

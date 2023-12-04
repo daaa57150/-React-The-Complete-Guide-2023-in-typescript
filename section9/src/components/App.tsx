@@ -53,13 +53,23 @@ export default function App() {
     return <NoProjectSelected onCreateProject={ () => setRoute('create-project') } />
   }
 
+  const createProject = () => {
+    setSelectedProject(undefined);
+    setRoute('create-project');
+  };
+
+  const selectProject = (project: Project) => {
+    setSelectedProject(project);
+    setRoute('project-details');
+  }
+
   return (
     <main className="h-screen my-8 flex gap-8">
       <Sidebar
         projects={ projects }
         selectedProject={ selectedProject }
-        onCreateProject={ () => setRoute('create-project') }
-        onSelectProject={ setSelectedProject }
+        onCreateProject={ createProject }
+        onSelectProject={ selectProject }
       />
 
       <MainContent>
