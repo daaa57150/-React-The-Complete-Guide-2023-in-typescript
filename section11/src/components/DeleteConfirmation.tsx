@@ -1,4 +1,9 @@
-export default function DeleteConfirmation({ onConfirm, onCancel }) {
+interface Props {
+  onConfirm: () => void;
+  onCancel: () => void;
+}
+
+export default function DeleteConfirmation({ onConfirm, onCancel }: Props) {
   return (
     <div id="delete-confirmation">
       <h2>Are you sure?</h2>
