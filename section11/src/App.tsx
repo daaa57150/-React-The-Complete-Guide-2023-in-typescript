@@ -1,10 +1,7 @@
 import { useRef, useState } from 'react';
 
+import UniFilter from '@components/Uni';
 import { Place } from '@models/place.model';
-import logoImg from './assets/logo.png';
-import DeleteConfirmation from './components/DeleteConfirmation';
-import Modal from './components/Modal';
-import Places from './components/Places';
 import { AVAILABLE_PLACES } from './data';
 
 function App() {
@@ -40,6 +37,13 @@ function App() {
 
   return (
     <>
+      <UniFilter/>
+    </>
+  );
+
+  /*
+  return (
+    <>
       <Modal ref={ modal }>
         <DeleteConfirmation
           onCancel={ handleStopRemovePlace }
@@ -67,11 +71,12 @@ function App() {
           title="Available Places"
           places={ AVAILABLE_PLACES }
           onSelectPlace={ handleSelectPlace }
-          fallbackText="No available places"
+          fallbackText="Sorting places by distance..."
         />
       </main>
     </>
   );
+  */
 }
 
 export default App;
