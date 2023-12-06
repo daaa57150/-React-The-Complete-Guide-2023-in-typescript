@@ -20,16 +20,6 @@ import victoriaFallsImg from './assets/victoria-falls.jpg';
 
 export const AVAILABLE_PLACES: Place[] = [
   {
-    id: 'p1',
-    title: 'Forest Waterfall',
-    image: {
-      src: forestWaterfallImg,
-      alt: 'A tranquil forest with a cascading waterfall amidst greenery.',
-    },
-    lat: 44.5588,
-    lon: -80.344,
-  },
-  {
     id: 'p2',
     title: 'Sahara Desert Dunes',
     image: {
@@ -38,6 +28,16 @@ export const AVAILABLE_PLACES: Place[] = [
     },
     lat: 25.0,
     lon: 0.0,
+  },
+  {
+    id: 'p1',
+    title: 'Forest Waterfall',
+    image: {
+      src: forestWaterfallImg,
+      alt: 'A tranquil forest with a cascading waterfall amidst greenery.',
+    },
+    lat: 44.5588,
+    lon: -80.344,
   },
   {
     id: 'p3',
