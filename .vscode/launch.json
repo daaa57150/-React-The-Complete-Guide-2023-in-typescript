@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
       // ------------------------------------ //
       //               LEGACY                 //
       // ------------------------------------ //
@@ -68,6 +69,16 @@
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:5173",
         "webRoot": "${workspaceRoot}/section11/src",
+      },
+
+      {
+        "name": "S12 - Quizz",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start - section12", // needs to be in the tasks.json file
+        "postDebugTask": "Terminate All Tasks",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceRoot}/section12/src",
       }
 
 
