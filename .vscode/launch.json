@@ -79,6 +79,16 @@
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:5173",
         "webRoot": "${workspaceRoot}/section12/src",
+      },
+
+      {
+        "name": "S15 - Place Picker",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start - section15", // needs to be in the tasks.json file
+        "postDebugTask": "Terminate All Tasks",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceRoot}/section12/src",
       }
 
 
