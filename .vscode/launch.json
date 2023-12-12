@@ -82,14 +82,24 @@
       },
 
       {
-        "name": "S15 - Place Picker",
+        "name": "S15 Front - Place Picker",
         "type": "chrome",
         "request": "launch",
         "preLaunchTask": "npm: start - section15", // needs to be in the tasks.json file
         "postDebugTask": "Terminate All Tasks",
         "url": "http://localhost:5173",
-        "webRoot": "${workspaceRoot}/section12/src",
-      }
+        "webRoot": "${workspaceRoot}/section15/src",
+      },
+      {
+        "name": "S15 Back - Place Picker",
+        "program": "app.js",
+        "request": "launch",
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "type": "node",
+        "localRoot": "${workspaceRoot}/section15/backend/"
+      },
 
 
     ]
