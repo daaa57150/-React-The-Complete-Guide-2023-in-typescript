@@ -1,6 +1,9 @@
 import { Place } from '@models/place.model.js';
+import * as http from '@shared/http';
+import { sortPlacesByDistanceFromCurrentPosition } from '@shared/loc';
 import { useEffect, useState } from 'react';
-import Places from './Places.jsx';
+import ErrorCard from './ErrorCard';
+import Places from './Places';
 
 interface Props {
   onSelectPlace: (place: Place) => void;
@@ -9,11 +12,27 @@ interface Props {
 export default function AvailablePlaces({ onSelectPlace }: Props) {
 
   const [availablePlaces, setAvailablePlaces] = useState<Place[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<Error | undefined>();
 
   async function fetchPlaces() {
-    const response = await fetch("http://localhost:3000/places");
-    const data = await response.json();
-    setAvailablePlaces(data.places);
+    setIsLoading(true);
+
+    try {
+      const places = await http.fetchPlaces();
+      const sorted = await sortPlacesByDistanceFromCurrentPosition(places);
+      setAvailablePlaces(sorted);
+
+    }
+    catch (error) {
+      if(error instanceof Error) {
+        setError(error);
+      } else {
+        setError(new Error(error as string))
+      }
+    }
+
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -21,12 +40,21 @@ export default function AvailablePlaces({ onSelectPlace }: Props) {
   }, []);
 
 
+  console.log('rendering available places');
+
+  if(error) {
+    return <ErrorCard title='An error' message={ error.message } />;
+  }
+
   return (
     <Places
       title="Available Places"
-      places={availablePlaces}
+      places={ availablePlaces }
       fallbackText="No places available."
       onSelectPlace={onSelectPlace}
+
+      isLoading={ isLoading }
+      loadingText={ 'Loading places...' }
     />
   );
 }

@@ -28,3 +28,17 @@ export function sortPlacesByDistance(places: Place[], lat: number, lon: number):
   });
   return sortedPlaces;
 }
+
+
+export async function sortPlacesByDistanceFromCurrentPosition(places: Place[]): Promise<Place[]> {
+  return new Promise<Place[]>((resolve, reject) => {
+    const onSuccess = (position: GeolocationPosition) => {
+      var sorted = sortPlacesByDistance(places, position.coords.latitude, position.coords.longitude);
+      resolve(sorted);
+    };
+    const onError = (positionError: GeolocationPositionError) => {
+      reject(new Error(positionError.message))
+    };
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+  });
+}
