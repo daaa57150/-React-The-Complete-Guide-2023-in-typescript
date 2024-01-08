@@ -1,5 +1,5 @@
 import { Place } from '@models/place.model.js';
-import * as http from '@shared/http';
+import http from '@shared/http';
 import { sortPlacesByDistanceFromCurrentPosition } from '@shared/loc';
 import { useEffect, useState } from 'react';
 import ErrorCard from './ErrorCard';
@@ -19,10 +19,9 @@ export default function AvailablePlaces({ onSelectPlace }: Props) {
     setIsLoading(true);
 
     try {
-      const places = await http.fetchPlaces();
+      const places = await http.fetchAvailablePlaces();
       const sorted = await sortPlacesByDistanceFromCurrentPosition(places);
       setAvailablePlaces(sorted);
-
     }
     catch (error) {
       if(error instanceof Error) {

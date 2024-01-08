@@ -91,14 +91,15 @@
         "webRoot": "${workspaceRoot}/section15/src",
       },
       {
+        // also see https://stackoverflow.com/a/67453390/1381582
         "name": "S15 Back - Place Picker",
-        "program": "app.js",
+        "program": "${workspaceRoot}/section15/backend/app.js",
         "request": "launch",
         "skipFiles": [
           "<node_internals>/**"
         ],
         "type": "node",
-        "localRoot": "${workspaceRoot}/section15/backend/"
+        "localRoot": "${workspaceFolder}/section15/backend",
       },
 
 

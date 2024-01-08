@@ -1,28 +1,34 @@
-import { useRef, useState, useCallback } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-import Places from './components/Places.jsx';
-import Modal from './components/Modal.jsx';
-import DeleteConfirmation from './components/DeleteConfirmation.jsx';
+import { Place } from '@models/place.model.js';
+import http from '@shared/http';
+import _ from 'lodash';
 import logoImg from './assets/logo.png';
 import AvailablePlaces from './components/AvailablePlaces.jsx';
+import DeleteConfirmation from './components/DeleteConfirmation.jsx';
+import Modal from './components/Modal.jsx';
+import Places from './components/Places.jsx';
 
 function App() {
-  const selectedPlace = useRef();
 
-  const [userPlaces, setUserPlaces] = useState([]);
-
+  const selectedPlace = useRef<string>();
+  const [userPlaces, setUserPlaces] = useState<Place[]>([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  function handleStartRemovePlace(place) {
+  useEffect(() => {
+    fetchPlaces();
+  }, [])
+
+  function handleStartRemovePlace(place: Place) {
     setModalIsOpen(true);
-    selectedPlace.current = place;
+    selectedPlace.current = place.id;
   }
 
   function handleStopRemovePlace() {
     setModalIsOpen(false);
   }
 
-  function handleSelectPlace(selectedPlace) {
+  function handleSelectPlace(selectedPlace: Place) {
     setUserPlaces((prevPickedPlaces) => {
       if (!prevPickedPlaces) {
         prevPickedPlaces = [];
@@ -32,15 +38,36 @@ function App() {
       }
       return [selectedPlace, ...prevPickedPlaces];
     });
+
+    try {
+      http.updateUserPlaces([selectedPlace, ...userPlaces]); // meh
+    }
+    catch(error) {
+      setUserPlaces(userPlaces);
+    }
   }
 
-  const handleRemovePlace = useCallback(async function handleRemovePlace() {
-    setUserPlaces((prevPickedPlaces) =>
-      prevPickedPlaces.filter((place) => place.id !== selectedPlace.current.id)
+  const handleRemovePlace = useCallback(async () => {
+    setUserPlaces(
+      (prevPickedPlaces) => _.reject(prevPickedPlaces, { id: selectedPlace.current })
     );
 
+    const places = _.reject(userPlaces, { id: selectedPlace.current });
+    http.updateUserPlaces(places);
+
     setModalIsOpen(false);
-  }, []);
+  }, [userPlaces]);
+
+  // should have some loading state
+  async function fetchPlaces() {
+    try {
+      const places = await http.fetchUserPlaces();
+      setUserPlaces(places);
+    }
+    catch (error) {
+      // should handle the error
+    }
+  }
 
   return (
     <>
@@ -65,6 +92,9 @@ function App() {
           fallbackText="Select the places you would like to visit below."
           places={userPlaces}
           onSelectPlace={handleStartRemovePlace}
+
+          isLoading={false}
+          loadingText={'Loading your places'}
         />
 
         <AvailablePlaces onSelectPlace={handleSelectPlace} />
