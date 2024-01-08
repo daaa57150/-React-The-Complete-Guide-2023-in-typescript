@@ -102,6 +102,25 @@
         "localRoot": "${workspaceFolder}/section15/backend",
       },
 
-
+      {
+        "name": "S16 Front - Place Picker",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start - section16", // needs to be in the tasks.json file
+        "postDebugTask": "Terminate All Tasks",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceRoot}/section16/src",
+      },
+      {
+        // also see https://stackoverflow.com/a/67453390/1381582
+        "name": "S16 Back - Place Picker",
+        "program": "${workspaceRoot}/section16/backend/app.js",
+        "request": "launch",
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "type": "node",
+        "localRoot": "${workspaceFolder}/section16/backend",
+      },
     ]
 }

@@ -215,6 +215,30 @@
       }
 		},
 
+
+    {
+			"type": "npm",
+			"script": "dev",
+			"path": "section16",
+			"label": "npm: start - section16",
+      "detail": "npm run dev",
+
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "VITE v[\\d.]+  ready in .*"
+          }
+        }
+      }
+		},
+
     {
       "label": "Terminate All Tasks",
       "command": "echo ${input:terminate}",
